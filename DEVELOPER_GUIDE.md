@@ -109,7 +109,11 @@ When moving to production, ensure these are set in your hosting provider (e.g., 
 ## 🚀 Development Workflow
 
 1.  **Local Dev**: `npm run dev`
-2.  **Type Checking**: `npx tsc --noEmit`
+2.  **Docker Local**: 
+    - Ensure `.env.local` is present.
+    - Run `docker-compose up --build`
+    - Access at `http://localhost:3000`
+3.  **Type Checking**: `npx tsc --noEmit`
 3.  **Database**: Apply `schema.sql` to a fresh Supabase project to replicate the environment.
 4.  **Auth**: Enable Email/Password provider in Supabase Auth settings.
 
