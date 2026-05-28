@@ -18,6 +18,9 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+# Opt-in to Next.js standalone output (required for the runner stage below).
+# Vercel does NOT set this, so it falls back to the default serverless build.
+ENV BUILD_STANDALONE=true
 RUN npm run build
 
 # Stage 3: Production image, copy all the files and run next
